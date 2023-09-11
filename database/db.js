@@ -8,4 +8,10 @@ const db = mysql.createConnection({
   database: process.env.DATABASE,
 })
 
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   database: 'appAuth',
+// })
+
 module.exports = db
