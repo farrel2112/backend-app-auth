@@ -14,8 +14,9 @@ router.post(
   async (req, res) => {
     try {
       const { email, password } = req.body
-      console.log(email, password)
 
+      if (!email || !password)
+        res.status(403).json({ message: 'Veuillez remplir tous les champs' })
       // Si les champs sont invalides, on renvoie des erreurs
       const errors = validationResult(req)
       if (!errors.isEmpty()) {
